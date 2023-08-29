@@ -365,6 +365,133 @@ With `Morgan`, you can easily keep an eye on your application's incoming request
 
 ---
 
+### MongoDB: Fundamental Operations and Terminologies
+
+**1. Terminology**:
+
+- **Database**: A MongoDB instance can host multiple databases. Each database is a set of collections, similar to how traditional databases host tables.
+
+- **Collection**: Equivalent to a table in relational databases. It holds a set of documents.
+
+- **Document**: A single data entity with fields and values, similar to a row in relational databases. Documents are stored in JSON-like format called BSON.
+
+- **Field**: A name-value pair inside a document. Similar to a column in relational databases.
+
+---
+
+**2. Basic Database Operations**:
+
+- **Create a New Database**:
+
+  ```javascript
+  use myNewDatabase;
+  ```
+
+  **Description**: This command switches to the specified database. If the database doesn't exist, MongoDB will create it once you add data.
+
+- **List All Databases**:
+
+  ```javascript
+  show dbs;
+  ```
+
+  **Description**: Displays a list of all databases on the MongoDB server.
+
+- **Switch Between Databases**:
+
+  ```javascript
+  use anotherDatabase;
+  ```
+
+  **Description**: Switches to the specified database.
+
+- **Drop a Database**:
+  ```javascript
+  db.dropDatabase();
+  ```
+  **Description**: Deletes the current database.
+
+---
+
+**3. Collections Management**:
+
+- **Create a Collection**:
+  MongoDB creates collections automatically when you insert data. However, you can also create them explicitly:
+
+  ```javascript
+  db.createCollection("myCollection");
+  ```
+
+  **Description**: Creates a new collection named "myCollection" in the current database.
+
+- **List All Collections**:
+
+  ```javascript
+  show collections;
+  ```
+
+  **Description**: Displays a list of all collections in the current database.
+
+- **Drop a Collection**:
+  ```javascript
+  db.myCollection.drop();
+  ```
+  **Description**: Deletes the specified collection and its data.
+
+---
+
+**4. Documents Management**:
+
+- **Insert a Document**:
+
+  ```javascript
+  db.myCollection.insertOne({ name: "Alice", age: 25 });
+  ```
+
+  **Description**: Inserts a single document into the specified collection.
+
+- **Find Documents**:
+
+  ```javascript
+  db.myCollection.find();
+  ```
+
+  **Description**: Retrieves all documents from the specified collection.
+
+- **Update a Document**:
+
+  ```javascript
+  db.myCollection.updateOne({ name: "Alice" }, { $set: { age: 26 } });
+  ```
+
+  **Description**: Updates the first document that matches the query.
+
+- **Delete a Document**:
+  ```javascript
+  db.myCollection.deleteOne({ name: "Alice" });
+  ```
+  **Description**: Deletes the first document that matches the query.
+
+---
+
+**5. Indexing**:
+
+- **Create an Index**:
+
+  ```javascript
+  db.myCollection.createIndex({ name: 1 });
+  ```
+
+  **Description**: Creates an ascending index on the "name" field of the specified collection. Indexing speeds up query performance.
+
+- **List All Indexes**:
+  ```javascript
+  db.myCollection.getIndexes();
+  ```
+  **Description**: Displays a list of all indexes on the specified collection.
+
+---
+
 Alright, let's move on to the practical aspects of MongoDB.
 
 ### MongoDB: Practical Introduction
