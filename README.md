@@ -1,7 +1,3 @@
-Of course! I'll rephrase the guide in a more generalized format so you can share it directly with your students.
-
----
-
 ## **Building a Blog Platform with Node.js and Express**
 
 ### **Introduction:**
