@@ -683,3 +683,31 @@ To install MongoDB, you'd typically follow the instructions provided in the offi
   **Description**: Retrieves documents with pagination, showing 10 documents starting from the 21st document.
 
 ---
+
+### Our folder structure
+
+/blog-api
+|-- /node_modules
+|-- /src
+| |-- /config
+| | |-- db.js
+| | |-- config.js
+| |-- /models
+| | |-- User.js
+| | |-- Post.js
+| |-- /routes
+| | |-- users.js
+| | |-- posts.js
+| |-- /middlewares
+| | |-- auth.js
+| | |-- error.js
+| | |-- notFound.js
+| |-- /controllers
+| | |-- userController.js
+| | |-- postController.js
+| |-- /utils
+| | |-- jwt.js
+| |-- app.js
+|-- package.json
+|-- .env
+|-- .gitignore
